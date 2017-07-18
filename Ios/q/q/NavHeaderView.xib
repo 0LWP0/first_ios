@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavHeaderView" customModule="q" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="uyP-yY-mNw">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="65O-DK-9f1">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nl4-GG-laS">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmL-Td-tGA">
+                            <rect key="frame" x="0.0" y="16" width="32" height="32"/>
+                            <state key="normal" image="left_back_image"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQm-3P-gNz">
+                            <rect key="frame" x="166.5" y="22" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="44d-Cz-vfp"/>
+                        <constraint firstItem="lQm-3P-gNz" firstAttribute="centerY" secondItem="nl4-GG-laS" secondAttribute="centerY" id="6m6-2R-enq"/>
+                        <constraint firstItem="VmL-Td-tGA" firstAttribute="leading" secondItem="nl4-GG-laS" secondAttribute="leading" id="KQS-5C-084"/>
+                        <constraint firstItem="lQm-3P-gNz" firstAttribute="centerX" secondItem="nl4-GG-laS" secondAttribute="centerX" id="bNC-zH-FxB"/>
+                        <constraint firstItem="VmL-Td-tGA" firstAttribute="centerY" secondItem="nl4-GG-laS" secondAttribute="centerY" id="c32-Ox-AZm"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="nl4-GG-laS" secondAttribute="trailing" id="0LC-ER-sxB"/>
+                <constraint firstItem="65O-DK-9f1" firstAttribute="top" secondItem="uyP-yY-mNw" secondAttribute="top" id="BGx-MN-bmB"/>
+                <constraint firstAttribute="bottom" secondItem="65O-DK-9f1" secondAttribute="bottom" id="BKg-dL-kw8"/>
+                <constraint firstItem="nl4-GG-laS" firstAttribute="leading" secondItem="uyP-yY-mNw" secondAttribute="leading" id="Mmu-aP-MeC"/>
+                <constraint firstItem="nl4-GG-laS" firstAttribute="top" secondItem="uyP-yY-mNw" secondAttribute="top" id="bt8-OD-cvc"/>
+                <constraint firstItem="nl4-GG-laS" firstAttribute="leading" secondItem="uyP-yY-mNw" secondAttribute="leading" id="dZ1-5C-as1"/>
+                <constraint firstAttribute="trailing" secondItem="65O-DK-9f1" secondAttribute="trailing" id="uOc-9w-8U8"/>
+                <constraint firstItem="65O-DK-9f1" firstAttribute="leading" secondItem="uyP-yY-mNw" secondAttribute="leading" id="yje-mb-1Bs"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-464.5" y="-522"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="left_back_image" width="32" height="32"/>
+    </resources>
+</document>

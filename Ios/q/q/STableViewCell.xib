@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="KGk-i7-Jjw" customClass="STableViewCell" customModule="q" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="227" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="227" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4Q-Be-e1x" customClass="QCycleScrollView" customModule="q" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="227" height="199.66666666666666"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OCa-TV-Ybg">
+                        <rect key="frame" x="103" y="89" width="20" height="20"/>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="OCa-TV-Ybg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="65N-dB-u7j"/>
+                    <constraint firstItem="OCa-TV-Ybg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8cr-eq-fOQ"/>
+                    <constraint firstItem="i4Q-Be-e1x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8eb-on-s2o"/>
+                    <constraint firstItem="OCa-TV-Ybg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="9ft-wC-d4d"/>
+                    <constraint firstAttribute="bottom" secondItem="i4Q-Be-e1x" secondAttribute="bottom" id="Nhs-Ok-ICe"/>
+                    <constraint firstItem="OCa-TV-Ybg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="q9F-gN-OpI"/>
+                    <constraint firstItem="i4Q-Be-e1x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tJW-ge-nPp"/>
+                    <constraint firstAttribute="trailing" secondItem="i4Q-Be-e1x" secondAttribute="trailing" id="xz8-p4-5Hm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+            <connections>
+                <outlet property="mload" destination="OCa-TV-Ybg" id="AUm-PJ-mzC"/>
+                <outlet property="scroll" destination="i4Q-Be-e1x" id="wAj-uT-xmU"/>
+            </connections>
+            <point key="canvasLocation" x="-556" y="-641"/>
+        </tableViewCell>
+    </objects>
+</document>
