@@ -239,7 +239,7 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
                 cell.lb_name.text = clist?.critics
                 cell.lb_info.text = clist?.content
                 cell.lb_time.text = clist?.createTime
-                cell.lb_lou.text = "\(indexPath.row+1) 楼"
+                cell.lb_lou.text = "\(indexPath.row+2) 楼"
                 
                 
                 return cell
