@@ -1120,7 +1120,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qli.q;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/qli/Q_Ios/Ios/q/q/qoc-Brigding-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/qli/First_ios/Ios/q/q/qoc-Brigding-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1137,7 +1137,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qli.q;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/qli/Q_Ios/Ios/q/q/qoc-Brigding-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/qli/First_ios/Ios/q/q/qoc-Brigding-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
