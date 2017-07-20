@@ -129,7 +129,7 @@ class DetailsViewController: BaseTableViewController,DetailsProtocol {
             
             let anotherView = myStoryBoard!.instantiateViewController(withIdentifier: "commentvc") as! CommentTableViewController
             
-            anotherView.id = deat.bookId
+//            anotherView.id = deat.bookId
             let bo = BookObject()
             bo.imageUrl = deat.imageUrl
             bo.author = deat.author

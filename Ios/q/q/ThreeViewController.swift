@@ -140,7 +140,7 @@ class ThreeViewController: BaseTableViewController,FindProtocol,FindXProtocol,UI
         
         let anotherView = myStoryBoard!.instantiateViewController(withIdentifier: "commentvc") as! CommentTableViewController
 
-        anotherView.id = id
+//        anotherView.id = id
         anotherView.book = b
         self.navigationController?.pushViewController(anotherView, animated: true)
     }

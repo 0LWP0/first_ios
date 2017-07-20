@@ -63,7 +63,7 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
         self.dismissX()
     }
     var commp: CommentPresenter?
-    var id : Int?
+//    var id : Int?
     var commt: CommentObject?
     
     func keyboardWillShow(note: NSNotification) {
@@ -154,7 +154,7 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
                     self.commt?.commentList.removeAll()
                 }
                 self.page = 1
-                self.commp?.handerJsonData(page: self.page, size: 10, id: self.id!)
+                self.commp?.handerJsonData(page: self.page, size: 10, id: (self.book?.bookId)!)
                 
                 self.refresh?.endRefreshing()
                 
@@ -163,7 +163,7 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
                 
                 self.page += 1
                 
-                self.commp?.handerJsonData(page: self.page, size: 10, id: self.id!)
+                self.commp?.handerJsonData(page: self.page, size: 10, id: (self.book?.bookId)!)
                 self.refresh?.endLoadingmore((self.commt?.nextpage)!)
             })
 
@@ -176,7 +176,7 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
     
         showLoading()
         commp = CommentPresenter()
-        commp?.handerJsonData(page: 1, size: 10, id: id!)
+        commp?.handerJsonData(page: 1, size: 10, id: (book?.bookId)!)
         commp?.setOnCommentProtocol(commp: self)
     }
 

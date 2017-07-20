@@ -82,7 +82,7 @@ class BookStoreViewController: BaseTableViewController,BookStoreProtocol,UIColle
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-             let  bookstorecell = tableView.dequeueReusableCell(withIdentifier: "bookstore") as! BookStoreTableViewCell!
+             let  bookstorecell = tableView.dequeueReusableCell(withIdentifier: "bookstore") as? BookStoreTableViewCell
 
             if book != nil {
                 BaseAlamofireImage.getImage(book.content[0].imageUrl, uiimage:  (bookstorecell?.iv_one)!)
