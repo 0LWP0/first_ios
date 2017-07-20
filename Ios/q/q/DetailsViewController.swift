@@ -8,13 +8,24 @@
 
 import UIKit
 
-class DetailsViewController: BaseTableViewController,DetailsProtocol {
+class DetailsViewController: BaseViewController,DetailsProtocol,UITableViewDelegate,UITableViewDataSource{
     
     var deat: DetailsObject!
+    @IBOutlet weak var tableView: UITableView!
     
     
-    var isB = true
+    @IBAction func btn_collection(_ sender: UIButton) {
+        
+        let coll = CollectionObserber()
+        let bo = BookObject()
+        bo.bookId = deat.bookId
+        bo.imageUrl = deat.imageUrl
+        bo.author = deat.author
 
+        coll.b = bo
+    }
+
+    var mView: UIView!
 
     var bookid: String = "1"
     
@@ -28,12 +39,39 @@ class DetailsViewController: BaseTableViewController,DetailsProtocol {
         self.tableView.reloadData()
         dismissLoading()
     }
-
-    
     var de: DetailsPresenter!
-    override func viewDidLoad() {
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        
+////        if let viewWithTag = self.navigationController?.view.viewWithTag(101){
+////            viewWithTag.removeFromSuperview()
+////        }
+//        
+//    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        if mView == nil {
+//            mView = UIView(frame: CGRect(x: 0, y:self.view.bounds.height-50, width: self.view.bounds.width, height: 50))
+//            mView.backgroundColor = UIColor.red
+//            mView.tag = 101
+//            self.navigationController?.view.insertSubview(mView, at: 1)
+//        }
+//        
+//
+//    }
+//    
+//    override func viewDidDisappear(_ animated: Bool) {
+//        mView.removeFromSuperview()
+//    }
+    
+       override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        
+
         self.navigationItem.title = "书籍详情"
         
 //        let view = UIView(frame: CGRect(x: 0, y: self.view.bounds.height-50, width: self.view.bounds.width, height: 50))
@@ -56,7 +94,7 @@ class DetailsViewController: BaseTableViewController,DetailsProtocol {
     
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.row {
         case 0:
@@ -119,17 +157,16 @@ class DetailsViewController: BaseTableViewController,DetailsProtocol {
         
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 3 {
             let myStoryBoard = self.storyboard
             
             let anotherView = myStoryBoard!.instantiateViewController(withIdentifier: "commentvc") as! CommentTableViewController
             
-//            anotherView.id = deat.bookId
             let bo = BookObject()
             bo.bookId = deat.bookId
             bo.imageUrl = deat.imageUrl
@@ -138,6 +175,11 @@ class DetailsViewController: BaseTableViewController,DetailsProtocol {
             self.navigationController?.pushViewController(anotherView, animated: true)
             tableView.cellForRow(at: indexPath)?.selectionStyle = .none
         }
+    }
+    
+     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+    
     }
     /*
     // MARK: - Navigation

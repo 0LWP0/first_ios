@@ -105,6 +105,7 @@ class TableViewController: BaseTableViewController,BaseProtocol,TableProtocol,QC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         showLoading()
         let selected = SelectedPresenter()
         selected.requestData()
@@ -333,7 +334,6 @@ class TableViewController: BaseTableViewController,BaseProtocol,TableProtocol,QC
         
         let anotherView = myStoryBoard!.instantiateViewController(withIdentifier: "detailsvc") as! DetailsViewController
         anotherView.bookid = id
-        anotherView.isB = true
         anotherView.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(anotherView, animated: true)
     }

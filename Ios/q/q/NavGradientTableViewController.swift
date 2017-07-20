@@ -225,7 +225,6 @@ class NavGradientTableViewController: BaseTableViewController,MoreProtocol {
         
         let anotherView = myStoryBoard!.instantiateViewController(withIdentifier: "detailsvc") as! DetailsViewController
         anotherView.bookid = "\(bid)"
-        anotherView.isB = false
         self.navigationController?.pushViewController(anotherView, animated: true)
         
         
