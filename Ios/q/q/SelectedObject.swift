@@ -30,8 +30,7 @@ class SelectedObject: NSObject {
     var booklist = [Book]()
 }
 
-
-class Book: NSObject {
+public class Book: NSObject {
     
     
     var bookId = ""
@@ -62,6 +61,9 @@ class Book: NSObject {
     
     
     var state = ""
+    var catId = ""
+    var catName = ""
+    var type = ""
     
     var recentlyUpdateTime = ""
     var lastestChapter = ""

@@ -131,6 +131,7 @@ class DetailsViewController: BaseTableViewController,DetailsProtocol {
             
 //            anotherView.id = deat.bookId
             let bo = BookObject()
+            bo.bookId = deat.bookId
             bo.imageUrl = deat.imageUrl
             bo.author = deat.author
             anotherView.book = bo

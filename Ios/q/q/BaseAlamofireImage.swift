@@ -46,6 +46,7 @@ class BaseAlamofireImage: NSObject {
         }
                 
     }
+
     // 缓存图片
     static func loadImage(_ imageURL: String,uiimage: UIImageView){
         let urlRequest = URLRequest(url: URL(string: imageURL)!)
@@ -123,7 +124,7 @@ class BaseAlamofireImage: NSObject {
     
 
     
-    static func getImageArray(_ urls: [String])  {
+    static func getImageArray(_ urls: [String])  -> [UIImage]?{
         var i: [UIImage] = []
         var count = 0;
         
@@ -136,14 +137,15 @@ class BaseAlamofireImage: NSObject {
                 case .success:
                     i.append(response.result.value!)
 
-                    if (count == urls.count){
-                    
-                        if im != nil{
-                            im.getSuccess(i)
-                            im = nil
-                        }
-                        
-                    }
+//                    if (count == urls.count){
+//                    
+//                        if im != nil{
+//                            i.append(<#T##newElement: UIImage##UIImage#>)
+//                            im.getSuccess(i)
+//                            im = nil
+//                        }
+//                        
+//                    }
                     break
                     
                 case.failure:
@@ -157,6 +159,8 @@ class BaseAlamofireImage: NSObject {
                 }
             }
         }
+        
+        return nil
    
     }
 

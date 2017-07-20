@@ -12,12 +12,12 @@ import UIKit
 
 public protocol QCycleScrollViewDelegate{
     //click image at index
-    func cycleScrollView(_ cycleScrollView: QCycleScrollView, didSelectAt index: Int)
+    func cycleScrollView(_ cycleScrollView: QCycleScrollView, didSelectAt index: Int, book: Book)
 }
 
 extension QCycleScrollViewDelegate {
     //click image at index
-    func cycleScrollView(_ cycleScrollView: QCycleScrollView, didSelectAt index: Int){
+    func cycleScrollView(_ cycleScrollView: QCycleScrollView, didSelectAt index: Int, book: Book){
         
     }
 }
@@ -37,32 +37,21 @@ open class QCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewD
         }
     }
     
-    //array of images
-    open var images:[UIImage]! {
+    var books: [Book]!{
         didSet{
-            if let imps = images{
-                pageControl?.numberOfPages = imps.count
+            if books != nil && !(books.isEmpty) {
+                pageControl?.numberOfPages = (books?.count)!
                 if(autoScroll){
                     configTimer()
+                }else{
+                    timer?.invalidate()
+                    timer = nil
                 }
-            }else {
-                timer?.invalidate()
-                timer = nil
             }
             collectionView?.reloadData()
         }
     }
-    
-    //    public var titles:[String]? {
-    //        didSet{
-    //            if let count = titles?.count {
-    //                pageControl?.numberOfPages = count
-    //            }else {
-    //                pageControl?.numberOfPages = 0
-    //            }
-    //            collectionView?.reloadData()
-    //        }
-    //    }
+
     var collectionView:UICollectionView?
     open var pageControl:UIPageControl?
     
@@ -117,7 +106,7 @@ open class QCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewD
             DispatchQueue.main.async {
                 var page:Int = Int(Float((self.collectionView?.contentOffset.x)! + 0.5*(self.collectionView?.frame.width)!) / Float((self.collectionView?.frame.width)!))
                 page += 1
-                if(page >= self.baseNum * (self.images.count)){
+                if(page >= self.baseNum * (self.books?.count)!){
                     page = 0
                 }
                 self.collectionView?.scrollToItem(at: IndexPath(row: page, section: 0), at: .centeredHorizontally, animated: true)
@@ -126,7 +115,7 @@ open class QCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewD
     }
     //多少个item
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let count = images?.count {
+        if let count = books?.count {
             return count * baseNum
         }
         return 0
@@ -137,13 +126,13 @@ open class QCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewD
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:QCycleScrollCell! = collectionView.dequeueReusableCell(withReuseIdentifier: "QCycleScrollCell", for: indexPath) as! QCycleScrollCell
         
-        if images != nil {
+        if books != nil {
             
             
-            let index:Int = indexPath.row % (self.images?.count)!
-            if let _images = images {
+            let index:Int = indexPath.row % (self.books?.count)!
+            if let _images = books {
                 if index < _images.count {
-                    cell.imageView.image = _images[index]
+                    BaseAlamofireImage.getImage((self.books?[index].imageUrl)!,uiimage: cell.imageView)
                     cell.imageView.tag = index
                 }
             }
@@ -152,18 +141,18 @@ open class QCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewD
     }
     
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if images != nil {
-            let index = indexPath.row % (self.images?.count)!
-            delegate?.cycleScrollView(self, didSelectAt: index)
+        if books != nil {
+            let index = indexPath.row % (self.books?.count)!
+            delegate?.cycleScrollView(self, didSelectAt: index,book: (self.books?[index])!)
         }
     }
     
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == collectionView {
             
-            if images != nil {
+            if books != nil {
                 var page:Int! = Int(Float(scrollView.contentOffset.x + 0.5*(collectionView?.bounds.width)!) / Float((collectionView?.bounds.width)!))
-                page = page % (self.images?.count)!
+                page = page % (self.books?.count)!
                 pageControl?.currentPage = page
             }
         }

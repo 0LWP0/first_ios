@@ -31,18 +31,19 @@
 //}
 import UIKit
 
-class TableViewController: BaseTableViewController,BaseProtocol,TableProtocol{
+class TableViewController: BaseTableViewController,BaseProtocol,TableProtocol,QCycleScrollViewDelegate{
+
     
     
     //    @IBOutlet weak var tableview: UITableView!
     var mList = Selected()
-    
+//    var selectedom: SelectedObject!
 //   let a = TranslationDelegate()
-    
+    var booklist: [Book]?
     var nib: UINib!
     var snib: UINib!
     var bnib: UINib!
-    var imageurls = Array<String>();
+//    var imageurls = Array<String>();
     //    var c: STableViewCell?
     
     //    let cellid = "demo"
@@ -70,17 +71,37 @@ class TableViewController: BaseTableViewController,BaseProtocol,TableProtocol{
         
         let anotherView = myStoryBoard!.instantiateViewController(withIdentifier: "morevc") as! MoreViewController
         
-//        anotherView.hidesBottomBarWhenPushed = true
         anotherView.mTitle = mList.selectedList[sender.tag].catName
         anotherView.catid = mList.selectedList[sender.tag].catId
         
         self.navigationController?.pushViewController(anotherView, animated: true)
-//        presentX(anotherView)
         
     }
     
 
+//    func cycleScrollView(_ cycleScrollView: QCycleScrollView, didSelectAt index: Int,book: Book) {
+//        print("\(book.bookName)")
+//    }
 
+    func cycleScrollView(_ cycleScrollView: QCycleScrollView, didSelectAt index: Int,book: Book) {
+        let myStoryBoard = self.storyboard
+        if book.type == "bookBanner"  {
+           
+            
+            let anotherView = myStoryBoard!.instantiateViewController(withIdentifier: "detailsvc") as! DetailsViewController
+            anotherView.bookid = book.bookId
+            self.navigationController?.pushViewController(anotherView, animated: true)
+        }else{
+    
+            let nav = myStoryBoard!.instantiateViewController(withIdentifier: "navgravc") as! NavGradientTableViewController
+            nav.toptitle = book.catName
+            nav.imagurl = book.imageUrl
+            nav.catid = book.catId
+            self.navigationController?.pushViewController(nav, animated: true)
+            
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,21 +109,7 @@ class TableViewController: BaseTableViewController,BaseProtocol,TableProtocol{
         let selected = SelectedPresenter()
         selected.requestData()
         selected.setBaseProtocoListener(self)
-        //        self.tableview.delegate = self
-        //
-        //        self.tableview.dataSource = self
-        //        selected.delegate = self.selected
-        
-        //
-        //        refresh = UIRefreshControl()
-        //
-        //        refresh.backgroundColor = UIColor.gray
-        //        refresh.tintColor = UIColor.yellow
-        
-        //        refresh.beginRefreshing()
-        //        self.tableView.addSubview(refresh)
-        //
-        //        nib = UINib(nibName: "BookTableViewXCell", bundle: nil)
+
         snib = UINib(nibName: "STableViewCell", bundle: nil)
         bnib = UINib(nibName: "BookTableViewTwoItemCell", bundle: nil)
         //        tableview.register(nib, forCellReuseIdentifier: bookid)
@@ -110,46 +117,10 @@ class TableViewController: BaseTableViewController,BaseProtocol,TableProtocol{
         tableView.register(bnib, forCellReuseIdentifier: booktwoid)
         
         tableView.separatorStyle = .none
-        
-        //        let basep = BasePresenter();
-        //        basep.setUrl(str: Qurl.url)
-        //        basep.reloadData()
-        //        basep.setBaseProtocolListener(ba: self)
-        
-        
-        
-        //            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
-        //                //code
-        //
-        //                print("---->1秒")
-        //                if !self.refresh.isRefreshing {
-        //
-        //                                    self.refresh.endRefreshing()
-        //                                    self.refresh.isHidden = false
-        //                }
-        //
-        //            }
-        
-        
-        
+
         
     }
-    //    func selected(list: Selected)->Void{
-    //
-    //        if list != nil {
-    //            dismissLoading()
-    //            mList = list
-    //            self.tableView.reloadData()
-    //
-    //        }
-    //
-    //              print("itme\(mList.selectedList)")
-    //
-    //
-    //        //给textLab 赋值
-    //        //这句话什么时候执行？，闭包类似于oc中的block或者可以理解成c语言中函数，只有当被调用的时候里面的内容才会执行
-    //    }
-    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -207,21 +178,17 @@ class TableViewController: BaseTableViewController,BaseProtocol,TableProtocol{
         
         
         if !mList.selectedList.isEmpty {
-            let selectedom: SelectedObject =  mList.selectedList[indexPath.row]
+            let selectedom =  mList.selectedList[indexPath.row]
             let mType = mList.selectedList[indexPath.row].type
-            
+      
             if mType == "bannerList" {
                 
                 if (sc == nil){
                     
                     sc = tableView.dequeueReusableCell(withIdentifier: scellid) as? STableViewCell
-                    
-                    for book in selectedom.booklist {
-                        imageurls.append(book.imageUrl)
-                    }
-                    
-                    
-                    sc.initUrl(imageurls)
+
+                    sc.scroll.delegate = self
+                    sc.initUrl(selectedom.booklist)
                 }
                 
                 return sc

@@ -27,7 +27,8 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
             comment.critics = "游客: \(DataUtil.getTimeStamp())"
             comment.createTime = DataUtil.getNowData()
             self.commt?.total = -1
-            self.commt?.commentList.append(comment)
+            self.commt?.commentList.insert(comment, at: 0)
+//            self.commt?.commentList.append(comment)
             self.tableView.reloadData()
             
             _ = textFieldShouldReturn(comm_text)

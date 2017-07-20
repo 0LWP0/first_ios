@@ -73,6 +73,9 @@ class SelectedPresenter {
                             book.recentlyUpdateTime = bookjson["recentlyUpdateTime"].stringValue
                             book.lastestChapter = bookjson["lastestChapter"].stringValue
                             book.lastestChineseChapter = bookjson["lastestChineseChapter"].stringValue
+                            book.catId = bookjson["catId"].stringValue
+                            book.type = bookjson["type"].stringValue
+                            book.catName = bookjson["catName"].stringValue
                             seleced.booklist.append(book)
                         }
                         

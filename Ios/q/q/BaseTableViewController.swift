@@ -56,27 +56,27 @@ class BaseTableViewController: UITableViewController {
     
     
     
-    internal func presentX(_ con: UIViewController){
-        
-        let transition = CATransition()
-        transition.duration = 0.35
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
-        view.window!.layer.add(transition, forKey: kCATransition)
-        present(con, animated: false, completion: nil)
-    }
-    
-    internal func dismissX(){
-        
-        let transition = CATransition()
-        transition.duration = 0.35
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromLeft
-        view.window!.layer.add(transition, forKey: kCATransition)
-        
-        self.dismiss(animated: false, completion: nil)
-    }
-    
+//    internal func presentX(_ con: UIViewController){
+//        
+//        let transition = CATransition()
+//        transition.duration = 0.35
+//        transition.type = kCATransitionPush
+//        transition.subtype = kCATransitionFromRight
+//        view.window!.layer.add(transition, forKey: kCATransition)
+//        present(con, animated: false, completion: nil)
+//    }
+//    
+//    internal func dismissX(){
+//        
+//        let transition = CATransition()
+//        transition.duration = 0.35
+//        transition.type = kCATransitionPush
+//        transition.subtype = kCATransitionFromLeft
+//        view.window!.layer.add(transition, forKey: kCATransition)
+//        
+//        self.dismiss(animated: false, completion: nil)
+//    }
+//    
     
     
     

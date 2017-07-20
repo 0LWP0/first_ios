@@ -8,13 +8,14 @@
 
 import UIKit
 
-class STableViewCell: UITableViewCell,UIScrollViewDelegate,ImageProrocol {
+class STableViewCell: UITableViewCell,UIScrollViewDelegate {
     
     
     @IBOutlet weak var scroll: QCycleScrollView!
-    @IBOutlet weak var mload: UIActivityIndicatorView!
+//    @IBOutlet weak var mload: UIActivityIndicatorView!
 
 //    var iamgeurls: [String] = []
+    
     
     
     
@@ -27,16 +28,6 @@ class STableViewCell: UITableViewCell,UIScrollViewDelegate,ImageProrocol {
         
     }
     
-//    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//    
-//        
-//    }
-    
-//    internal func test(){
-//    
-//    
-//    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -53,27 +44,13 @@ class STableViewCell: UITableViewCell,UIScrollViewDelegate,ImageProrocol {
   
         
     }
-    func getError(_ error: Error?) {
-        mload.stopAnimating()
-    }
-    
-    func getSuccess(_ images: [UIImage]) {
-        
-    
-        mload.stopAnimating()
-        mload.isHidden = true
-        //设置小圆点
-        scroll.images = images
-        scroll.pageControl?.numberOfPages = images.count
-    }
-    
+
 
     
-    func initUrl(_ iamgeurls: Array<String>)  {
+    func initUrl(_ iamgeurls: [Book])  {
 
-        mload.startAnimating()
-        BaseAlamofireImage.getImageArray(iamgeurls)
-        BaseAlamofireImage.setImageListenter(self)
+        scroll.books = iamgeurls
+
     }
     
 
