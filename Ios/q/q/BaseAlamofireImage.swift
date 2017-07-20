@@ -14,7 +14,6 @@ import AlamofireImage
 
 class BaseAlamofireImage: NSObject {
     
-    fileprivate static var im: ImageProrocol!
     
     var imagex: UIImage?
     fileprivate static let imageFilter = RoundedCornersFilter(radius: 10.0)
@@ -121,54 +120,6 @@ class BaseAlamofireImage: NSObject {
             imageCache.removeImage(for: urlRequest, withIdentifier: imageUrl)
         }
     }
-    
 
-    
-    static func getImageArray(_ urls: [String])  -> [UIImage]?{
-        var i: [UIImage] = []
-        var count = 0;
-        
-        for url in urls {
-            
-            Alamofire.request(url).responseImage { response in
-                count += 1
-
-                switch(response.result){
-                case .success:
-                    i.append(response.result.value!)
-
-//                    if (count == urls.count){
-//                    
-//                        if im != nil{
-//                            i.append(<#T##newElement: UIImage##UIImage#>)
-//                            im.getSuccess(i)
-//                            im = nil
-//                        }
-//                        
-//                    }
-                    break
-                    
-                case.failure:
-                    if im != nil{
-                    im.getError(response.result.error)
-                    
-                    }
-                    
-                    break
-                    
-                }
-            }
-        }
-        
-        return nil
-   
-    }
-
-    static func setImageListenter(_ iml: ImageProrocol!){
-    
-        self.im = iml
-    
-    }
-    
     
 }

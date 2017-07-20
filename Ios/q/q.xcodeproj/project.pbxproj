@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5100C9C51DD4532200783B01 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5100C9C41DD4532200783B01 /* MenuViewController.swift */; };
 		5100C9C91DD4584F00783B01 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5100C9C81DD4584F00783B01 /* MainViewController.swift */; };
-		510FDEEE1DE2CE1B00A3BBCD /* ImageProrocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510FDEED1DE2CE1B00A3BBCD /* ImageProrocol.swift */; };
 		510FDEF01DE2ECAD00A3BBCD /* ErrorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510FDEEF1DE2ECAD00A3BBCD /* ErrorObject.swift */; };
 		51128F8D1DDAB37F00063E0D /* BaseEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51128F8C1DDAB37F00063E0D /* BaseEnum.swift */; };
 		51128F971DDAFD5800063E0D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51128F961DDAFD5800063E0D /* SWRevealViewController.m */; };
@@ -169,7 +168,6 @@
 		0120E24D0789265789FC2E82 /* Pods-q.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-q.release.xcconfig"; path = "Pods/Target Support Files/Pods-q/Pods-q.release.xcconfig"; sourceTree = "<group>"; };
 		5100C9C41DD4532200783B01 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5100C9C81DD4584F00783B01 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		510FDEED1DE2CE1B00A3BBCD /* ImageProrocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProrocol.swift; sourceTree = "<group>"; };
 		510FDEEF1DE2ECAD00A3BBCD /* ErrorObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorObject.swift; sourceTree = "<group>"; };
 		51128F8C1DDAB37F00063E0D /* BaseEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEnum.swift; sourceTree = "<group>"; };
 		51128F951DDAFD5800063E0D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -573,7 +571,6 @@
 				5180CE9A1E70079300E11810 /* DetailsProtocol.swift */,
 				51C79E8A1DACDC3B0014EE87 /* BaseProtocol.swift */,
 				519FD8B21DD2C40E001950AC /* DialogProtocol.swift */,
-				510FDEED1DE2CE1B00A3BBCD /* ImageProrocol.swift */,
 				51E388FC1E02460A0070CBDE /* FeedbackProtocol.swift */,
 				51731B8C1E04E3A6006BAF4F /* SelectedProtocol.swift */,
 				5143D6001E66AED300406407 /* BookStoreProtocol.swift */,
@@ -957,7 +954,6 @@
 				51717BF11E756AED001F6DA7 /* SearchTwoTableViewCell.swift in Sources */,
 				51A764361E015DE50060E61D /* Md5.swift in Sources */,
 				51A6EAAA1E891E7000706B1B /* CommentPresenter.swift in Sources */,
-				510FDEEE1DE2CE1B00A3BBCD /* ImageProrocol.swift in Sources */,
 				5186B11F1E042AF3004064F9 /* SelectedPresenter.swift in Sources */,
 				519BA84E1DF9311800E3D782 /* BaseCollectionViewCell.swift in Sources */,
 				5179A2A01F19E4A9000A0282 /* ThridTableViewCell.swift in Sources */,
