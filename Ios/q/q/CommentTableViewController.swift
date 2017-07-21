@@ -15,6 +15,7 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
 
     
     var book: BookObject?
+    @IBOutlet weak var comment_view: UIView!
     
     
     var headerView : CommentView?
@@ -28,7 +29,6 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
             comment.createTime = DataUtil.getNowData()
             self.commt?.total = -1
             self.commt?.commentList.insert(comment, at: 0)
-//            self.commt?.commentList.append(comment)
             self.tableView.reloadData()
             
             _ = textFieldShouldReturn(comm_text)
@@ -40,8 +40,15 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
         
     }
     @IBAction func sort(_ sender: UIBarButtonItem) {
-        self.commt?.commentList.reverse()
-        self.tableView.reloadData()
+        
+                UIView.animate(withDuration: 0.5, animations: { () -> Void in
+                    self.comment_view.frame.origin.y -= 100
+                }) { (finished) -> Void in
+                    self.showTypewriting()
+        
+                }
+//        self.commt?.commentList.reverse()
+//        self.tableView.reloadData()
     }
 
     @IBOutlet weak var comm_text: UITextField!
@@ -57,14 +64,7 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
         return true
     }
    
-
-
-    @IBAction func dismiss(_ sender: UIBarButtonItem) {
-        
-        self.dismissX()
-    }
     var commp: CommentPresenter?
-//    var id : Int?
     var commt: CommentObject?
     
     func keyboardWillShow(note: NSNotification) {
@@ -129,6 +129,7 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.comment_view.frame =  CGRect(x: 0, y: self.view.frame.height+50, width: self.view.frame.width, height: 50)
 
        
         self.comm_text.delegate = self
@@ -264,38 +265,38 @@ class CommentTableViewController: BaseViewController ,CommentProtocol,UITableVie
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if self.commt != nil && (self.commt?.total) != 0{
-            self.view.frame.origin.y = 0
-           let commentList = self.commt?.commentList[indexPath.row]
-            let string = (commentList?.critics)! + ": "+(commentList?.content)!
-            let optionMenu = UIAlertController(title: nil, message: string, preferredStyle: .actionSheet)
-            
-            let deleteAction = UIAlertAction(title: "举报", style: .destructive, handler:{ (alert: UIAlertAction!) -> Void in
-                //            println("删除")
-            })
-            
-            let saveAction = UIAlertAction(title: "复制", style: .default, handler: { (alert: UIAlertAction!) -> Void in
-                //            println("保存")
-                UIPasteboard.general.string = self.commt?.commentList[indexPath.row].content
-                
-            })
-            
-            
-            
-            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: { (alert: UIAlertAction!) -> Void in
-                //            println("取消")
-                
-            })
-            
-            optionMenu.addAction(saveAction)
-            optionMenu.addAction(deleteAction)
-            optionMenu.addAction(cancelAction)
-            
-            self.present(optionMenu, animated: true, completion: nil)
-            //解决点击alert延迟问题
-//            tableView.cellForRow(at: indexPath)?.selectionStyle = .none
-        }
-        
+//        if self.commt != nil && (self.commt?.total) != 0{
+//            self.view.frame.origin.y = 0
+//           let commentList = self.commt?.commentList[indexPath.row]
+//            let string = (commentList?.critics)! + ": "+(commentList?.content)!
+//            let optionMenu = UIAlertController(title: nil, message: string, preferredStyle: .actionSheet)
+//            
+//            let deleteAction = UIAlertAction(title: "举报", style: .destructive, handler:{ (alert: UIAlertAction!) -> Void in
+//                //            println("删除")
+//            })
+//            
+//            let saveAction = UIAlertAction(title: "复制", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+//                //            println("保存")
+//                UIPasteboard.general.string = self.commt?.commentList[indexPath.row].content
+//                
+//            })
+//            
+//            
+//            
+//            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: { (alert: UIAlertAction!) -> Void in
+//                //            println("取消")
+//                
+//            })
+//            
+//            optionMenu.addAction(saveAction)
+//            optionMenu.addAction(deleteAction)
+//            optionMenu.addAction(cancelAction)
+//            
+//            self.present(optionMenu, animated: true, completion: nil)
+//            //解决点击alert延迟问题
+////            tableView.cellForRow(at: indexPath)?.selectionStyle = .none
+//        }
+//        
        
         
 

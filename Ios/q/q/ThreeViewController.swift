@@ -27,21 +27,25 @@ class ThreeViewController: BaseTableViewController,FindProtocol,FindXProtocol,UI
     
     var page = 1
     
+    private var boo: BookObject?
+    
     final let size = 5
     
     func getFindXData(_ str: FindXObject) {
-        
-        
-        //        print("\(refresh.isAnimating())")
-        
-        
-        
         self.findx = str
         bookcell.setData(f: findx)
         self.tableView.reloadData()
         dismissLoading()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "commentsegue" {
+            let nav2Controller = segue.destination as! CommentTableViewController
+            nav2Controller.book = boo
+        }
+
+    }
     
     func initRefresh(){
         refresh = QRefreshControl(scrollView: tableView,refreshBlock: {
@@ -136,13 +140,20 @@ class ThreeViewController: BaseTableViewController,FindProtocol,FindXProtocol,UI
     }
     
     func onClick(id: Int,b: BookObject) {
+        boo = b
         let myStoryBoard = self.storyboard
         
         let anotherView = myStoryBoard!.instantiateViewController(withIdentifier: "commentvc") as! CommentTableViewController
 
-//        anotherView.id = id
         anotherView.book = b
         self.navigationController?.pushViewController(anotherView, animated: true)
+//        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+//            self.tabBarController?.tabBar.frame.origin.y += (self.tabBarController?.tabBar.frame.height)!
+//        }) { (finished) -> Void in
+//            self.navigationController?.pushViewController(anotherView, animated: true)
+//
+//        }
+        
     }
     
     

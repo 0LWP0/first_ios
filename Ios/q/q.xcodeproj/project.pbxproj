@@ -68,6 +68,8 @@
 		5173340A1F20D27400D11433 /* CollectionObserber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517334091F20D27400D11433 /* CollectionObserber.swift */; };
 		5173340C1F20D40700D11433 /* CollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5173340B1F20D40700D11433 /* CollectionProtocol.swift */; };
 		5173340E1F20D64D00D11433 /* CollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5173340D1F20D64D00D11433 /* CollectionCollectionViewCell.swift */; };
+		517334101F20D86100D11433 /* DetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5173340F1F20D86100D11433 /* DetailsView.xib */; };
+		517334121F20D87900D11433 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517334111F20D87900D11433 /* DetailsView.swift */; };
 		5179A29E1F19DE67000A0282 /* DSendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5179A29D1F19DE67000A0282 /* DSendTableViewCell.swift */; };
 		5179A2A01F19E4A9000A0282 /* ThridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5179A29F1F19E4A9000A0282 /* ThridTableViewCell.swift */; };
 		5179A2A21F19E8E4000A0282 /* DFourthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5179A2A11F19E8E4000A0282 /* DFourthTableViewCell.swift */; };
@@ -236,6 +238,8 @@
 		517334091F20D27400D11433 /* CollectionObserber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionObserber.swift; sourceTree = "<group>"; };
 		5173340B1F20D40700D11433 /* CollectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionProtocol.swift; sourceTree = "<group>"; };
 		5173340D1F20D64D00D11433 /* CollectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		5173340F1F20D86100D11433 /* DetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsView.xib; sourceTree = "<group>"; };
+		517334111F20D87900D11433 /* DetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		5179A29D1F19DE67000A0282 /* DSendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSendTableViewCell.swift; sourceTree = "<group>"; };
 		5179A29F1F19E4A9000A0282 /* ThridTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThridTableViewCell.swift; sourceTree = "<group>"; };
 		5179A2A11F19E8E4000A0282 /* DFourthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFourthTableViewCell.swift; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 				513E8F821DFE6B1400930A34 /* MenuView.xib */,
 				51D845921E9F827300B57038 /* NavHeaderView.xib */,
 				513D0CAB1F1E0EC100031A59 /* CommentView.xib */,
+				5173340F1F20D86100D11433 /* DetailsView.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 				513E8F841DFE6B6900930A34 /* MenuView.swift */,
 				51160C861E6B194D00319B18 /* QRefreshControl.swift */,
 				513D0CA91F1E0EA800031A59 /* CommentView.swift */,
+				517334111F20D87900D11433 /* DetailsView.swift */,
 			);
 			name = uiview;
 			sourceTree = "<group>";
@@ -783,6 +789,7 @@
 				51CDC2EB1E13872600AC5D60 /* BookTableViewTwoItemCell.xib in Resources */,
 				51462DB71D8F7A3200331567 /* Assets.xcassets in Resources */,
 				51CDC2E71E1378E900AC5D60 /* BookTableViewItemCell.xib in Resources */,
+				517334101F20D86100D11433 /* DetailsView.xib in Resources */,
 				51230AF51DFCCC680023BF94 /* CollectionViewCell.xib in Resources */,
 				51E3E8231DDD549F004E54BB /* YTableViewCell.xib in Resources */,
 				51F401021E69059F004FD3BC /* BookStoreItemNibTwoTableViewCell.xib in Resources */,
@@ -956,6 +963,7 @@
 				51CDC2EA1E13872600AC5D60 /* BookTableViewTwoItemCell.swift in Sources */,
 				51CFC16C1DBDE95700D837AE /* EmotionsObject.swift in Sources */,
 				519BA8491DF92E0100E3D782 /* LoginViewController.swift in Sources */,
+				517334121F20D87900D11433 /* DetailsView.swift in Sources */,
 				5186B1231E042EED004064F9 /* BookObject.swift in Sources */,
 				51128F971DDAFD5800063E0D /* SWRevealViewController.m in Sources */,
 				5141ADB91F1B927600085300 /* ChapterListProtocol.swift in Sources */,

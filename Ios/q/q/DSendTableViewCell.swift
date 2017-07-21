@@ -11,11 +11,8 @@ import UIKit
 class DSendTableViewCell: UITableViewCell,UITableViewDelegate,UITableViewDataSource {
     
     var rlist: Array<recentlyUpdateChaptesObject>?
-    @IBAction func sned_btn(_ sender: UIButton) {
-    }
 
-    @IBOutlet weak var send_one_lb: UILabel!
-    @IBOutlet weak var third_two_lb: UILabel!
+
     @IBOutlet weak var dTableView: UITableView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,6 +48,8 @@ class DSendTableViewCell: UITableViewCell,UITableViewDelegate,UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        
         return 30
     }
 

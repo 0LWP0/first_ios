@@ -43,8 +43,28 @@ class BookStoreViewController: BaseTableViewController,BookStoreProtocol,UIColle
         
         anotherView.mTitle = name
         anotherView.catid = String(id)
-        
         self.navigationController?.pushViewController(anotherView, animated: true)
+        
+//        UIView.animate(withDuration: 1, animations: {
+//        
+//        
+//        },)
+        
+      
+//        UIView.animate(withDuration: 1, animations: <#T##() -> Void#> in
+//            self.tabBarController?.tabBar.frame.origin.y += (self.tabBarController?.tabBar.frame.height)! , completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#> in self.tabBarController?.tabBar.frame.origin.y += (self.tabBarController?.tabBar.frame.height)!)
+        
+//        UIView.animate(withDuration: 1) { () -> Void in
+//            self.tabBarController?.tabBar.frame.origin.y += (self.tabBarController?.tabBar.frame.height)! , (Bool) -> Void in
+//            
+//            
+//            
+//            
+//                    
+//            
+//        }
+        
+        
 
     }
     func onClickCatId(cid: Int,cname: String) {
