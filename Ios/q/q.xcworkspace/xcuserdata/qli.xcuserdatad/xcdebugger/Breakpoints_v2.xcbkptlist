@@ -26,12 +26,12 @@
                   moduleName = "q"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qli/First_ios/Ios/q/q/BaseProtocol.swift"
-                  timestampString = "522287333.228459"
+                  timestampString = "522305325.005961"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
                   endingLineNumber = "23"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "8">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "q"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qli/First_ios/Ios/q/q/BaseProtocol.swift"
-                  timestampString = "522287333.232749"
+                  timestampString = "522305325.009421"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
                   endingLineNumber = "23"
-                  offsetFromSymbolStart = "47">
+                  offsetFromSymbolStart = "76">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1920,12 +1920,12 @@
                   moduleName = "q"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qli/First_ios/Ios/q/q/SearchPresenter.swift"
-                  timestampString = "522287333.350054"
+                  timestampString = "522305325.075154"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "25">
+                  offsetFromSymbolStart = "28">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1935,12 +1935,12 @@
                   moduleName = "q"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qli/First_ios/Ios/q/q/SearchPresenter.swift"
-                  timestampString = "522287333.353463"
+                  timestampString = "522305325.076965"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "54">
+                  offsetFromSymbolStart = "60">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1950,12 +1950,12 @@
                   moduleName = "q"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qli/First_ios/Ios/q/q/SearchPresenter.swift"
-                  timestampString = "522287333.35696"
+                  timestampString = "522305325.07865"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2232,11 +2232,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "q/DSendTableViewCell.swift"
-            timestampString = "522250376.067778"
+            timestampString = "522304290.97878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2248,13 +2248,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "q/DFourthTableViewCell.swift"
-            timestampString = "521803008.729759"
+            timestampString = "522304290.97878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "DFourthTableViewCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2264,13 +2264,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "q/DFourthTableViewCell.swift"
-            timestampString = "521803008.729759"
+            timestampString = "522304290.97878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "DFourthTableViewCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2280,13 +2280,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "q/DFourthTableViewCell.swift"
-            timestampString = "521803008.729759"
+            timestampString = "522304290.97878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "tableView(_:heightForRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "DFourthTableViewCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2455,12 +2455,12 @@
                   moduleName = "q"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qli/First_ios/Ios/q/q/CommentTableViewController.swift"
-                  timestampString = "522287333.434902"
+                  timestampString = "522305325.100171"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "35">
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "48">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2470,12 +2470,12 @@
                   moduleName = "q"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qli/First_ios/Ios/q/q/CommentTableViewController.swift"
-                  timestampString = "522287333.43769"
+                  timestampString = "522305325.101888"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "65">
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "76">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2485,12 +2485,12 @@
                   moduleName = "q"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qli/First_ios/Ios/q/q/CommentTableViewController.swift"
-                  timestampString = "522287333.44107"
+                  timestampString = "522305325.103718"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "227">
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "284">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2500,12 +2500,12 @@
                   moduleName = "q"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qli/First_ios/Ios/q/q/CommentTableViewController.swift"
-                  timestampString = "522287333.444001"
+                  timestampString = "522305325.106464"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "138">
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "220">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2581,11 +2581,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "q/DetailsViewController.swift"
-            timestampString = "522253341.026349"
+            timestampString = "522302599.415982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "initHeader()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2619,6 +2619,54 @@
             startingLineNumber = "49"
             endingLineNumber = "49"
             landmarkName = "jumpMore(id:name:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "q/DetailsViewController.swift"
+            timestampString = "522325285.907173"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "q/DetailsViewController.swift"
+            timestampString = "522325285.907173"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "q/DetailsViewController.swift"
+            timestampString = "522325285.907173"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -13,6 +13,7 @@ class DetailsViewController: BaseViewController,DetailsProtocol,UITableViewDeleg
     var deat: DetailsObject!
     @IBOutlet weak var tableView: UITableView!
     
+    var decell: DetailsTableViewCell?
     
     @IBAction func btn_collection(_ sender: UIButton) {
         
@@ -34,7 +35,7 @@ class DetailsViewController: BaseViewController,DetailsProtocol,UITableViewDeleg
     func getDetailsData(_ str: DetailsObject) {
         
         deat = str
-
+        initHeader()
         self.tableView.reloadData()
         dismissLoading()
     }
@@ -42,14 +43,14 @@ class DetailsViewController: BaseViewController,DetailsProtocol,UITableViewDeleg
    fileprivate  func initHeader() {
     
     
-        BaseAlamofireImage.getImage(deat.imageUrl, uiimage: (details?.de_image)!)
-        details?.de_lb_one.text  = deat.bookName
-        details?.de_lb_two.text  = deat.author
-        details?.de_lb_three.text = "评分  " + String(deat.scores) + "  评论数 " + deat.comments
-        details?.de_lb_four.text = deat.words+"字  " + deat.scorePeople+"人喜欢"
-        details?.de_lb_five.text = deat.ddesc
-        details?.lb_zj.text = "连载至第\(deat.lastestChapter)章"
-        details?.lb_time.text =  deat.recentlyUpdateTime
+        BaseAlamofireImage.getImage(deat.imageUrl, uiimage: (decell?.de_image_cell)!)
+        decell?.lb_one_cell.text  = deat.bookName
+        decell?.lb_two_cell.text  = deat.author
+        decell?.lb_three_cell.text = "评分  " + String(deat.scores) + "  评论数 " + deat.comments
+        decell?.lb_four_cell.text = deat.words+"字  " + deat.scorePeople+"人喜欢"
+        decell?.lb_five_cell.text = deat.ddesc
+        decell?.lb_zj.text = "连载至第\(deat.lastestChapter)章"
+        decell?.lb_time_cell.text =  deat.recentlyUpdateTime
     
 
     
@@ -58,15 +59,15 @@ class DetailsViewController: BaseViewController,DetailsProtocol,UITableViewDeleg
 
     
     
-    var details: DetailsView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        details = DetailsView()
-//        self.tableView.tableHeaderView = details
-//        initHeader()
+        decell = Bundle.main.loadNibNamed("DetailsTableViewCell", owner: nil, options: nil)?[0] as? DetailsTableViewCell
 
+        self.tableView.tableHeaderView = decell
+        self.tableView.tableFooterView = Bundle.main.loadNibNamed("DetailsXTableViewCell", owner: nil, options: nil)?[0] as? DetailsXTableViewCell
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
 
@@ -87,80 +88,57 @@ class DetailsViewController: BaseViewController,DetailsProtocol,UITableViewDeleg
     }
     
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 400
+//    }
+//    
     
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch indexPath.row {
-            //    case 0:
-            
-            //        let  first = tableView.dequeueReusableCell(withIdentifier: "dfirst") as? DFirstTableViewCell
-            //         if deat != nil {
-            
-            //          BaseAlamofireImage.getImage(deat.imageUrl, uiimage: (first?.image_one_d)!)
-            
-            //          first?.lb_one.text = deat.bookName
-            //         first?.lb_two.text = deat.author
-            //       first?.lb_five.text = "评分  " + String(deat.scores) + "  评论数 " + deat.comments
-            //         first?.lb_three.text = deat.words+"字  " + deat.scorePeople+"人喜欢"
-            //         first?.lb_four.text = deat.ddesc
-            //     }
-            
-            //      return first!
-            
-        case 0:
+        if indexPath.row <= 4 {
             let  send = tableView.dequeueReusableCell(withIdentifier: "dsend") as? DSendTableViewCell
             if deat != nil {
-               
-                send?.initData(alist: deat.recentlyUpdateChaptes)
-        tableView.rowHeight = CGFloat(deat.recentlyUpdateChaptes.count * 30)
+                tableView.rowHeight = 30
+                send?.de__lable.text = deat.recentlyUpdateChaptes[indexPath.row].chapterTitle
             }
             
             return send!
+        }else if(indexPath.row == 5){
+            let  se = tableView.dequeueReusableCell(withIdentifier: "spcell")
+            return se!
+        }else{
+        
+             let  fourth = tableView.dequeueReusableCell(withIdentifier: "dfourth") as? DFourthTableViewCell
             
-        case 1:
-            
-            
-            let  fourth = tableView.dequeueReusableCell(withIdentifier: "dfourth") as? DFourthTableViewCell
-            
-            if deat != nil{
-                if deat.recentComment.isEmpty {
-                    tableView.rowHeight = 0
-                }else{
-                    tableView.rowHeight = 10 + CGFloat(100 * deat.recentComment.count)+(fourth?.four_lb.frame.size.height)!
-                    fourth?.initData(rclist: deat.recentComment)
-                }
+            if deat != nil {
+             let recentCommentObject = deat.recentComment[indexPath.row-6]
+//                print("\(indexPath.row)")
+                tableView.rowHeight = 100
+
+                 BaseAlamofireImage.getImage(recentCommentObject.replies, uiimage: (fourth?.four_image_logo)!)
+                fourth?.four_name.text = recentCommentObject.visitor
+                fourth?.four_desc.text = recentCommentObject.critics
+                fourth?.four_like.text = "回复: \((recentCommentObject.replies)) 赞  " + "\((recentCommentObject.likes))  " + (recentCommentObject.createTime)
                 
             }
             return fourth!
-            
-        case 2:
-            tableView.rowHeight = 45
-            let  sexth = tableView.dequeueReusableCell(withIdentifier: "sexth")
-            
-            return sexth!
-            
-            
-        default:
-            var  end = tableView.dequeueReusableCell(withIdentifier: "CellId")
-            
-            if end == nil {
-                end = UITableViewCell(style: .default, reuseIdentifier: "CellId")
-            }
-            return end!
         }
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        
+        if deat != nil {
+            return (deat.recentComment.count + deat.recentlyUpdateChaptes.count)+1
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
